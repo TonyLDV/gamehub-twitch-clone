@@ -6,7 +6,14 @@ import { Skeleton } from "@/components/ui/skeleton";
 import UserAvatar, { UserAvatarSkeleton } from "@/components/user-avatar";
 import Thumbnail, { ThumbnailSkeleton } from "@/components/ui/thumbnail";
 
-type FeedCardProps = { data: Stream & { user: User } };
+type FeedCardProps = {
+  data: {
+    user: User;
+    isLive: boolean;
+    name: string;
+    thumbnailUrl: string | null;
+  };
+};
 
 const FeedCard = ({ data }: FeedCardProps) => {
   return (
